@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
 
 const app = createApp(App);
 
@@ -8,7 +7,5 @@ const app = createApp(App);
 import ModuleSlot from './components/ModuleSlot.vue';
 // 注册全局组件
 app.component('ModuleSlot', ModuleSlot);
-
-app.use(router);
 
 app.mount('#app');
