@@ -1,5 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+
+// 引入全局组件
+import ModuleSlot from './components/ModuleSlot.vue';
+// 注册全局组件
+app.component('ModuleSlot', ModuleSlot);
+
+app.use(router);
+
+app.mount('#app');
