@@ -2,11 +2,14 @@
     <module-slot pTitle1="Weather" class="w2">
         <template v-slot:moduleSlot>
             <div class="df-column">
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1">
-                        <span class="icon-txt1">福田区</span>
-                        <span class="icon-txt2" v-if="FutianWeatherInfo">{{ FutianWeatherInfo.lives[0].weather }}</span>
-                    </div>
+                <div class="icon-txt-1">
+                    <span class="icon-txt1">福田区</span>
+                    <span class="icon-txt2" v-if="FutianWeatherInfo">{{ FutianWeatherInfo.lives[0].weather }}</span>
+                </div>
+
+                <div class="icon-txt-1">
+                    <span class="icon-txt1">龙华区</span>
+                    <span class="icon-txt2" v-if="LongHuaWeatherInfo">{{ LongHuaWeatherInfo.lives[0].weather }}</span>
                 </div>
             </div>
         </template>
@@ -48,16 +51,37 @@ export default defineComponent({
         }
 
         getWeatherInfo(FuTianCityCode).then(res => {
-            console.log(res);
-
             FutianWeatherInfo.value = res;
         });
-        // FutianWeatherInfo.value = getWeatherInfo(FuTianCityCode);
-        // LongHuaWeatherInfo.value = getWeatherInfo(LongHuaCityCode);
+
+        getWeatherInfo(LongHuaCityCode).then(res => {
+            LongHuaWeatherInfo.value = res;
+        });
 
         return { FutianWeatherInfo, LongHuaWeatherInfo };
     },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.icon-txt-1 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.icon-txt-1 .icon-txt1 {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
+    color: #000;
+}
+
+.icon-txt-1 .icon-txt2 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #515154;
+}
+</style>

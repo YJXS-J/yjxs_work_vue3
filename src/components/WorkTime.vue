@@ -2,45 +2,33 @@
     <module-slot pTitle1="Time" class="w1">
         <template v-slot:moduleSlot>
             <div class="df-column">
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1" v-show="TimeOffWork != '1'">
-                        <span class="icon-txt1">距离上班还有</span>
-                        <span class="icon-txt2">{{ TimeOffWork }}</span>
-                    </div>
+                <div class="icon-txt-1" v-show="TimeOffWork != '1'">
+                    <span class="icon-txt1">距离上班还有</span>
+                    <span class="icon-txt2">{{ TimeOffWork }}</span>
                 </div>
 
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1" v-show="TimeServed != '1'">
-                        <span class="icon-txt1">今天已认真工作</span>
-                        <span class="icon-txt2">{{ TimeServed }}</span>
-                    </div>
+                <div class="icon-txt-1" v-show="TimeServed != '1'">
+                    <span class="icon-txt1">今天已认真工作</span>
+                    <span class="icon-txt2">{{ TimeServed }}</span>
                 </div>
 
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1" v-show="StartYourLunchBreak != '1'">
-                        <span class="icon-txt1">距离开始午休还有</span>
-                        <span class="icon-txt2">{{ StartYourLunchBreak }}</span>
-                    </div>
+                <div class="icon-txt-1" v-show="StartYourLunchBreak != '1'">
+                    <span class="icon-txt1">距离开始午休还有</span>
+                    <span class="icon-txt2">{{ StartYourLunchBreak }}</span>
                 </div>
 
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1" v-show="BreakALunchBreak != '1'">
-                        <span class="icon-txt1">距离午休结束还有</span>
-                        <span class="icon-txt2">{{ BreakALunchBreak }}</span>
-                    </div>
+                <div class="icon-txt-1" v-show="BreakALunchBreak != '1'">
+                    <span class="icon-txt1">距离午休结束还有</span>
+                    <span class="icon-txt2">{{ BreakALunchBreak }}</span>
                 </div>
 
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1" v-show="afterWorkTime != '1'">
-                        <span class="icon-txt1">距离下班还有</span>
-                        <span class="icon-txt2">{{ afterWorkTime }}</span>
-                    </div>
+                <div class="icon-txt-1" v-show="afterWorkTime != '1'">
+                    <span class="icon-txt1">距离下班还有</span>
+                    <span class="icon-txt2">{{ afterWorkTime }}</span>
                 </div>
 
-                <div class="icon-txt-box">
-                    <div class="icon-txt-1" v-show="getOffWork == '0'">
-                        <span class="icon-txt1">今天已经下班咯！</span>
-                    </div>
+                <div class="icon-txt-1" v-show="getOffWork == '0'">
+                    <span class="icon-txt1">今天已经下班咯！</span>
                 </div>
             </div>
         </template>
@@ -138,20 +126,21 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.icon-txt-box .icon-txt-1 {
+.icon-txt-1 {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 0.5rem;
 }
 
-.icon-txt-box .icon-txt-1 .icon-txt1 {
+.icon-txt-1 .icon-txt1 {
     font-size: 21px;
     font-weight: 600;
     line-height: 25px;
     color: #000;
 }
 
-.icon-txt-box .icon-txt-1 .icon-txt2 {
+.icon-txt-1 .icon-txt2 {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
