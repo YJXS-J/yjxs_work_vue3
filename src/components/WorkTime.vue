@@ -74,7 +74,7 @@ export default defineComponent({
 
             // 判断是否开始午休
             if (nowTime > time1 && time3 - nowTime >= 0) {
-                StartYourLunchBreak.value = count(time1, nowTime);
+                StartYourLunchBreak.value = count(nowTime, time3);
             } else if (nowTime > time1 && time3 + 1000 * 3600 * 2 - nowTime >= 0) {
                 time1 += nowTime - time3;
                 StartYourLunchBreak.value = '开始午休了';
